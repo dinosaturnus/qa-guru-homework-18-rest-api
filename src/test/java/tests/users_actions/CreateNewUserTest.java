@@ -10,7 +10,7 @@ import static io.restassured.http.ContentType.JSON;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.*;
 
-public class CreateNewUserTest {
+public class CreateNewUserTest extends TestBase {
 
     @Tag("POST")
     @Tag("201")
@@ -29,7 +29,7 @@ public class CreateNewUserTest {
                 .contentType(JSON)
                 .body(requestBody)
                 .when()
-                .post("/api/users")
+                .post("/users")
                 .then()
                 .log().status()
                 .log().body()

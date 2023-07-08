@@ -1,10 +1,17 @@
 package tests.users_actions;
 
 import com.codeborne.selenide.Configuration;
+import io.restassured.RestAssured;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
-public class TestBase {
 
-    static void beforeAll() {
-        Configuration.baseUrl = "https://reqres.in";
+public abstract class TestBase {
+
+    @BeforeEach
+    void beforeEach() {
+        RestAssured.baseURI = "https://reqres.in";
+        RestAssured.basePath = "/api";
     }
 }
+

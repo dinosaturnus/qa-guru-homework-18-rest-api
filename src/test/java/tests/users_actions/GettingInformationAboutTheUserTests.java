@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.*;
 
-public class GettingInformationAboutTheUserTests {
+public class GettingInformationAboutTheUserTests extends TestBase {
 
     @Tag("GET")
     @Tag("200")
@@ -20,7 +20,7 @@ public class GettingInformationAboutTheUserTests {
                 .log().uri()
                 .log().body()
                 .when()
-                .get("/api/users/2")
+                .get("/users/2")
                 .then()
                 .log().status()
                 .log().body()
@@ -30,7 +30,7 @@ public class GettingInformationAboutTheUserTests {
                 .body("data.email", is("janet.weaver@reqres.in"))
                 .body("data.first_name", is("Janet"))
                 .body("data.last_name", is("Weaver"))
-                .body("data.avatar", is("/img/faces/2-image.jpg"));
+                .body("data.avatar", is("https://reqres.in/img/faces/2-image.jpg"));
     }
 
 
@@ -43,7 +43,7 @@ public class GettingInformationAboutTheUserTests {
                 .log().uri()
                 .log().body()
                 .when()
-                .get("/api/users/0")
+                .get("/users/0")
                 .then()
                 .log().status()
                 .log().body()

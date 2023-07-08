@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class DeleteUserTest {
+public class DeleteUserTest extends TestBase {
 
     @Tag("DELETE")
     @Tag("204")
@@ -18,7 +18,7 @@ public class DeleteUserTest {
                 .log().uri()
                 .log().body()
                 .when()
-                .delete("/api/users/2")
+                .delete("/users/2")
                 .then()
                 .log().status()
                 .log().body()
