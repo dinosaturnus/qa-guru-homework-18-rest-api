@@ -25,7 +25,7 @@ public class GettingInformationAboutTheUserTests {
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemes/getting-information-about-the-single-user-successful-200.json"))
+                .body(matchesJsonSchemaInClasspath("schemes/getting-information-about-the-single-user-successful-get-200.json"))
                 .body("data.id", equalTo(2))
                 .body("data.email", is("janet.weaver@reqres.in"))
                 .body("data.first_name", is("Janet"))

@@ -34,7 +34,7 @@ public class CreateNewUserTest {
                 .log().status()
                 .log().body()
                 .statusCode(201)
-                .body(matchesJsonSchemaInClasspath("schemes/create-new-user-successful-201.json"))
+                .body(matchesJsonSchemaInClasspath("schemes/create-new-user-successful-post-201.json"))
                 .body("name", is("morpheus"))
                 .body("job", is("leader"));
     }

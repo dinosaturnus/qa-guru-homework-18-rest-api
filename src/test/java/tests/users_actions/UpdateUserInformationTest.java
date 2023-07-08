@@ -32,7 +32,7 @@ public class UpdateUserInformationTest {
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemes/update-user-information-successful-200.json"))
+                .body(matchesJsonSchemaInClasspath("schemes/update-user-information-successful-put-200.json"))
                 .body("name", is("morpheus"))
                 .body("job", is("zion resident"));
     }
