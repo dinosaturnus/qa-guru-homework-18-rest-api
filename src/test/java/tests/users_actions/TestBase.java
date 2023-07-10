@@ -10,7 +10,6 @@ public abstract class TestBase {
     static void beforeAll() {
         RestAssured.baseURI = "https://reqres.in";
         RestAssured.basePath = "/api";
-        Configuration.pageLoadStrategy = "eager";
     }
 
 }
