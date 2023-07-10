@@ -16,14 +16,14 @@ public class GetUserSpecs {
             .log().uri()
             .log().body();
 
-    public static ResponseSpecification getUserSuccessful200Response = new ResponseSpecBuilder()
+    public static ResponseSpecification getUserSuccessful200ResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .expectStatusCode(200)
             .expectBody(matchesJsonSchemaInClasspath("schemes/getting-information-about-the-single-user-successful-get-200.json"))
             .build();
 
-    public static ResponseSpecification getUserUnsuccessful404Response = new ResponseSpecBuilder()
+    public static ResponseSpecification getUserUnsuccessful404ResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .expectStatusCode(404)

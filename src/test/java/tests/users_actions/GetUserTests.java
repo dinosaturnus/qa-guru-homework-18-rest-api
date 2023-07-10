@@ -10,7 +10,6 @@ import tests.models.get_user.GetUserResponseModel;
 
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static tests.helpers.CustomAllureListener.withCustomTemplates;
 import static tests.specs.GetUserSpecs.*;
@@ -30,7 +29,7 @@ public class GetUserTests extends TestBase {
                         .when()
                         .get("/users/2")
                         .then()
-                        .spec(getUserSuccessful200Response)
+                        .spec(getUserSuccessful200ResponseSpec)
                         .extract().as(GetUserResponseModel.class));
 
         step("Проверка ответа", () -> {
@@ -56,7 +55,7 @@ public class GetUserTests extends TestBase {
                         .when()
                         .get("/users/0")
                         .then()
-                        .spec(getUserUnsuccessful404Response)
+                        .spec(getUserUnsuccessful404ResponseSpec)
         );
     }
 }
